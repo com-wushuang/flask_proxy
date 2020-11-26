@@ -9,7 +9,7 @@ def hello():
     return "Hello World!"
 
 
-@app.route("/docker/deploy/blog")
+@app.route("/docker/deploy/blog", methods=["POST"])
 def deploy():
     code = os.system("bash deploy.sh")
     if code == 0:
