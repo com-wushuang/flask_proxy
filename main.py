@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,request
 import os
 
 app = Flask(__name__)
@@ -16,6 +16,18 @@ def deploy():
         return "ok"
     else:
         return "failed"
+
+@app.route("/stack/policy/check",methods=["POST"])
+def check_without_param():
+    print request.from
+    return "True"
+
+@app.route("/stack/param/<name>",methods=["POST"])
+def check_with_param(name):
+    print name
+    print request.from
+    return "True"
+
 
 
 if __name__ == "__main__":
