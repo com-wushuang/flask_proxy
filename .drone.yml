@@ -14,4 +14,4 @@ steps:
   - docker container rm -f flask_proxy
 - name: start_container
   commands:
-  - docker run -d --name flask_proxy mystchen/flask_proxy:latest sh /run.sh
+  - docker run -d -p 1323:80 --name flask_proxy mystchen/flask_proxy:latest sh /run.sh
