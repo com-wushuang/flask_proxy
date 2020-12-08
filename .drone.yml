@@ -11,7 +11,7 @@ steps:
 - name: remove_container
   failure: ignore
   commands:
-  - docker container rm flask_proxy
+  - docker container rm -f flask_proxy
 - name: start_container
   commands:
   - docker run --name flask_proxy mystchen/flask_proxy:latest sh /run.sh
