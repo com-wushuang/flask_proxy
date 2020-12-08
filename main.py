@@ -18,6 +18,7 @@ def check_without_param():
         "input": {}
     }
     form = request.form
+    print form
     input_opa["input"]["credentials"] = json.loads(form["credentials"])
     input_opa["input"]["rule"] = json.loads(form["rule"])
     target = Parser(json.loads(form["target"]))
